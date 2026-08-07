@@ -9,8 +9,8 @@ A repeatable lab where a *low-privileged* user holds the OU permissions that Bad
 
 ## What to build here
 
-1. **Domain controller** — a Server 2025 DC (this feature only exists on 2025). Note the build/patch level, because Microsoft patched the original bidirectional-link issue but not the whole family.
-2. **OU + delegation** — an OU with a normal user granted write permissions over it (e.g. `Create child objects` / write on dMSA-related attributes). This is the "91% of environments already have this" condition.
+1. **Domain controller** - a Server 2025 DC (this feature only exists on 2025). Note the build/patch level, because Microsoft patched the original bidirectional-link issue but not the whole family.
+2. **OU + delegation** -  an OU with a normal user granted write permissions over it (e.g. `Create child objects` / write on dMSA-related attributes). This is the "91% of environments already have this" condition.
 3. **A privileged target account** — e.g. a Domain Admin the attacker will try to "succeed."
 4. **Logging baseline** — make sure the DC is generating the events the detection side needs (see `/detection-rules`). Coordinate the audit policy here so detection has data to work with.
 
